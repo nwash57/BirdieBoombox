@@ -1,6 +1,10 @@
-// This file is required by the index.html file and will
-// be executed in the renderer process for that window.
-// No Node.js APIs are available in this process because
-// `nodeIntegration` is turned off. Use `preload.js` to
-// selectively enable features needed in the rendering
-// process.
+// include the ipc module to communicate with main process.
+const ipcRenderer = require('electron').ipcRenderer; 
+ 
+const loopInput = document.getElementById('loopInput');
+loopInput.addEventListener('input', function () {
+    console.log(loopInput.files)
+ 
+   //send the info to main process . we can pass any arguments as second param.
+    ipcRenderer.send("loopInput", arg); // ipcRender.send will pass the information to main process
+});

@@ -5,13 +5,29 @@
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-    <title>Hello World!</title>
+    <title>Birdie Boombox Setup Tool</title>
   </head>
   <body>
-    <h1>Hello World!</h1>
-    We are using Node.js <span id="node-version"></span>,
-    Chromium <span id="chrome-version"></span>,
-    and Electron <span id="electron-version"></span>.
+    <h1>Birdie Boombox</h1> 
+    <div>
+      <h2>File Setup</h2>
+      <div>
+        <label for="loopInput">Looping (Back Button) File: </label>
+        <br />
+        <input id="loopInput" name="loopInput" type="file" accept="audio/*" />
+      </div>
+      <div>
+        <label for="randomInput">Random (Front Botton) Files: </label>
+        <br />
+        <input id="randomInput" name="randomInput" type="file" accept="audio/*" multiple />
+      </div>
+      <div>
+        <label for="storageCapacity">Storage Capacity</label>
+        <progress id="storageCapacity" value="4096" max="16384"></progress>
+      </div>
+    </div>
+
+
 
     <!-- You can also require other files to run in this process -->
     <script src="./renderer.js"></script>
